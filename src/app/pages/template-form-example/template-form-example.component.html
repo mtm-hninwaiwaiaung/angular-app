@@ -1,0 +1,34 @@
+<div class="template-form-container">
+  <h2> Template-Driven Form Example</h2>
+
+  <div class="my-form-container">
+    <form #myForm="ngForm" (ngSubmit)="submitForm()" class="my-form">
+
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="formData.name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select Position</mat-label>
+        <mat-select [(ngModel)]="formData.position" name="position" required>
+          <mat-option [value]="">Choose</mat-option>
+          <mat-option *ngFor="let eachPosition of positionList" [value]="eachPosition.value">
+            {{eachPosition.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div [ngClass]="{'mat-form-field-invalid':myForm.submitted && !formData.gender}">
+        <mat-radio-group [(ngModel)]="formData.gender" name="gender" required>
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="submit-button">
+        <button mat-flat-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</div>

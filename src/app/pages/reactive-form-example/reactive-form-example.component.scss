@@ -1,0 +1,38 @@
+.reactive-form-container {
+  width: 100%;
+  display: inline-block;
+
+  h2 {
+    text-align: center;
+    margin: 15px 0px;
+  }
+
+  .user-form-container {
+    width: 50%;
+    margin: 0 auto;
+
+    .user-form {
+      width: 80%;
+      display: inline-flex;
+      flex-direction: column;
+
+      .submit-button {
+        margin: 20px 0px;
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .mat-radio-button {
+    margin-left: 10px;
+  }
+
+  .mat-form-field-invalid .mat-radio-label-content {
+    color: #f44336;
+  }
+
+  .mat-form-field-invalid .mat-radio-outer-circle {
+    border-color: #f44336 !important;
+  }
+}
