@@ -11,12 +11,17 @@ import { AngularMaterailModule } from './angular-materail.module';
 import { AppComponent } from './app.component';
 import { TemplateFormExampleComponent } from './pages/template-form-example/template-form-example.component';
 import { ReactiveFormExampleComponent } from './pages/reactive-form-example/reactive-form-example.component';
+import { AsyncValidatorComponent } from './pages/async-validator/async-validator.component';
+
+// services
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormExampleComponent,
-    ReactiveFormExampleComponent
+    ReactiveFormExampleComponent,
+    AsyncValidatorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,9 @@ import { ReactiveFormExampleComponent } from './pages/reactive-form-example/reac
     BrowserAnimationsModule,
     AngularMaterailModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
