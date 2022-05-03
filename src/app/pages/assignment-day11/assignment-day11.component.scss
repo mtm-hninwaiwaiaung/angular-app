@@ -1,0 +1,49 @@
+.template-form-container {
+  width: 100%;
+  display: inline-block;
+
+  h2 {
+    text-align: center;
+    margin: 15px 0px;
+  }
+
+  .member-form-container {
+    width: 50%;
+    margin: 0 auto;
+
+    .member-form {
+      width: 80%;
+      display: inline-flex;
+      flex-direction: column;
+
+      .submit-button {
+        margin: 20px 0px;
+      }
+    }
+  }
+
+  .member-list-container {
+    .no-member {
+      text-align: center;
+    }
+  }
+}
+
+.member-table-container {
+  .member-table {
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 5px 10px;
+    }
+
+    .fixed-width {
+      width: 120px;
+    }
+  }
+}
