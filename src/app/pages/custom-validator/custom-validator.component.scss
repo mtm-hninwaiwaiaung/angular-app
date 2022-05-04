@@ -1,0 +1,28 @@
+.custom-validator-container {
+  width: 100%;
+  display: inline-block;
+
+  h1 {
+    text-align: center;
+    margin: 15px 0px;
+  }
+
+  .my-form-container {
+    width: 50%;
+    margin: 0 auto;
+
+    .my-form {
+      width: 80%;
+      display: inline-flex;
+      flex-direction: column;
+
+      .btn-container {
+        margin: 20px 0px;
+
+        .search-btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

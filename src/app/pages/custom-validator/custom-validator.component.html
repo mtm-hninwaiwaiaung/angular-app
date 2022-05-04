@@ -1,0 +1,33 @@
+<div class="custom-validator-container">
+  <h1>URL Validator</h1>
+
+  <div class="my-form-container">
+    <form [formGroup]="myForm" (ngSubmit)="saveForm(myForm)" class="my-form">
+
+      <mat-form-field>
+        <mat-label>Website Name</mat-label>
+        <input matInput type="text" formControlName="websiteName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Website URL</mat-label>
+        <input matInput type="text" formControlName="websiteUrl">
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-error *ngIf="myForm?.get('websiteUrl')?.hasError('required')">
+          Please provide your website URL
+        </mat-error>
+        <mat-error *ngIf="!myForm?.get('websiteUrl')?.hasError('required') &&
+          myForm?.get('websiteUrl')?.hasError('invalidUrl')">
+          Only URLs served over HTTPS and from the .io top-level domain are accepted.
+        </mat-error>
+      </mat-form-field>
+
+      <div class="btn-container">
+        <button mat-raised-button color="primary" [disabled]="!myForm.valid" class="search-btn">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
