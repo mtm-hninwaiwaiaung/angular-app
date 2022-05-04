@@ -11,14 +11,14 @@ import { AngularMaterailModule } from './angular-materail.module';
 import { AppComponent } from './app.component';
 import { TemplateFormExampleComponent } from './pages/template-form-example/template-form-example.component';
 import { ReactiveFormExampleComponent } from './pages/reactive-form-example/reactive-form-example.component';
-import { AssignmentDay11Component } from './pages/assignment-day11/assignment-day11.component';
+import { AssignmentDay12Component } from './pages/assignment-day12/assignment-day12.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormExampleComponent,
     ReactiveFormExampleComponent,
-    AssignmentDay11Component
+    AssignmentDay12Component
   ],
   imports: [
     BrowserModule,
