@@ -1,0 +1,60 @@
+<div class="template-form-container">
+  <h2>Membership Form</h2>
+
+  <div class="member-form-container">
+    <form #membershipForm="ngForm" (ngSubmit)="onSubmit()" class="member-form">
+
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="member.name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Email" [(ngModel)]="member.email" name="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Membership Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="member.membershipDate" name="membershipDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="submit-button">
+        <button mat-flat-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="member-list-container">
+    <h2>MemberList</h2>
+    <div class="no-member" *ngIf="allMemberList.length <= 0">There is no registered member to display.</div>
+
+    <div class="member-table-container" *ngIf="allMemberList.length > 0">
+      <table class="member-table">
+        <thead>
+          <tr>
+            <th>#ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eachMember of allMemberList; let i=index">
+            <th class="fixed-width">{{ i+1 }}</th>
+            <td>{{ eachMember.name }}</td>
+            <td>{{ eachMember.email }}</td>
+            <td class="fixed-width">{{ eachMember.membershipDate | date: 'dd/MM/yyyy'}}</td>
+            <th class="fixed-width">
+              <button mat-raised-button color="warn" (click)="deleteCurrentUser(i)">Delete</button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
