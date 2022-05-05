@@ -14,6 +14,7 @@ import { ReactiveFormExampleComponent } from './pages/reactive-form-example/reac
 import { AssignmentDay11Component } from './pages/assignment-day11/assignment-day11.component';
 import { AssignmentDay12Component } from './pages/assignment-day12/assignment-day12.component';
 import { CustomValidatorComponent } from './pages/custom-validator/custom-validator.component';
+import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CustomValidatorComponent } from './pages/custom-validator/custom-valida
     ReactiveFormExampleComponent,
     AssignmentDay11Component,
     AssignmentDay12Component,
-    CustomValidatorComponent
+    CustomValidatorComponent,
+    InterfaceExampleComponent
   ],
   imports: [
     BrowserModule,

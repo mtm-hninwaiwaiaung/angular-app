@@ -8,3 +8,12 @@ export interface Member {
     email: string;
     membershipDate: Date
 }
+
+export interface Student {
+    id: number;
+    name: string;
+    email: string;
+    age?: number;
+    phNumber?: string;
+    hobby: string;
+}
