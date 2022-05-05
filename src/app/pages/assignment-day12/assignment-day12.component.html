@@ -45,7 +45,7 @@
 
       <mat-form-field>
         <mat-label>Confirm Password</mat-label>
-        <input type="password" matInput formControlName="confirmPassword">
+        <input type="password" matInput formControlName="confirmPassword" (ngModelChange)="checkConfirmPassword()">
         <mat-error *ngIf="regForm['confirmPassword'].hasError('required')">
           Confirm Password is required
         </mat-error>
