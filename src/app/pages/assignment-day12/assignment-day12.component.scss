@@ -1,0 +1,24 @@
+.registeration-validator-container {
+  width: 100%;
+  display: inline-block;
+
+  h2 {
+    text-align: center;
+    margin: 15px 0px;
+  }
+
+  .form-container {
+    width: 50%;
+    margin: 0 auto;
+
+    .registeration-form {
+      width: 80%;
+      display: inline-flex;
+      flex-direction: column;
+
+      .button-container {
+        margin: 20px 0px;
+      }
+    }
+  }
+}

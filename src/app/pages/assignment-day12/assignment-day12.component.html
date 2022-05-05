@@ -1,0 +1,66 @@
+<div class="registeration-validator-container">
+
+  <h2>User Registration Form</h2>
+
+  <div class="form-container">
+    <form class="registeration-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error *ngIf="regForm['firstName'].hasError('required')">
+          FirstName is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error *ngIf="regForm['lastName'].hasError('required')">
+          FirstName is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="regForm['email'].hasError('email') && !regForm['email'].hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="regForm['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password">
+        <mat-error *ngIf="regForm['password'].hasError('required')">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="regForm['password'].hasError('minlength')">
+          Password must be at least 6 characters
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput formControlName="confirmPassword">
+        <mat-error *ngIf="regForm['confirmPassword'].hasError('required')">
+          Confirm Password is required
+        </mat-error>
+        <mat-error *ngIf="regForm['confirmPassword'].hasError('mustMatch')">
+          Password must match
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button color="primary" [disabled]="!registrationForm.valid">
+          Submit
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
