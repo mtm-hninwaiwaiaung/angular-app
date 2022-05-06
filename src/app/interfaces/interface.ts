@@ -11,7 +11,7 @@ export interface Member {
 
 export interface Student {
     id: number;
-    name: string;
+    readonly name: string;
     email: string;
     age?: number;
     phNumber?: string;

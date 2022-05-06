@@ -28,4 +28,11 @@ export class InterfaceExampleComponent implements OnInit {
   changeArrayToString(paramArr: string[]): string {
     return paramArr.map(eachHobby => eachHobby).join(',');
   }
+
+  // for readonly type testing.
+  // changeUserName() {
+  //   this.studentList.map((eachStudent: Student) => {
+  //     eachStudent.name = eachStudent.name + eachStudent.id.toString();
+  //   });
+  // }
 }
