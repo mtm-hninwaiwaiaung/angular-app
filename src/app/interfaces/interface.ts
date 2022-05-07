@@ -17,3 +17,8 @@ export interface Student {
     phNumber?: string;
     hobby: string;
 }
+
+export interface URL {
+    websiteName?: string;
+    websiteUrl: string;
+}
