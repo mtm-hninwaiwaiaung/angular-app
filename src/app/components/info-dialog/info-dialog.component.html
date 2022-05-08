@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Your Booking Info Detail</h1>
+<div mat-dialog-content>
+
+  <div class="each-info">
+    <span class="info-label">Name:</span>
+    <span class="info-value">{{data.name}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Address:</span>
+    <span class="info-value">{{data.address || '-'}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Email:</span>
+    <span class="info-value">{{data.email}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Telephone:</span>
+    <span class="info-value">{{data.telephone}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Check-in && Check-out Date:</span>
+    <span class="info-value">{{data.checkInDate | date: 'dd/MM/yyyy'}} ~
+      {{data.checkOutDate | date: 'dd/MM/yyyy'}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Number of Guests:</span>
+    <span class="info-value">{{data.numberOfGuest || '-'}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Room Type:</span>
+    <span class="info-value">{{data.roomType}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Least Pocket Wifi:</span>
+    <span class="info-value">{{data.wifiOption === 0 ? 'No' : 'Yes'}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Special Note:</span>
+    <span class="info-value">{{data.specialRequirements || '-'}}</span>
+  </div>
+
+  <div class="each-info">
+    <span class="info-label">Total Cost for 1 Day:</span>
+    <span class="info-value">${{data.totalCost}}</span>
+  </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

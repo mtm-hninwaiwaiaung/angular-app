@@ -15,6 +15,10 @@ import { AssignmentDay11Component } from './pages/assignment-day11/assignment-da
 import { AssignmentDay12Component } from './pages/assignment-day12/assignment-day12.component';
 import { CustomValidatorComponent } from './pages/custom-validator/custom-validator.component';
 import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
+import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
+
+// components
+import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { InterfaceExampleComponent } from './pages/interface-example/interface-e
     AssignmentDay11Component,
     AssignmentDay12Component,
     CustomValidatorComponent,
-    InterfaceExampleComponent
+    InterfaceExampleComponent,
+    AssignmentDay14Component,
+    InfoDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,143 @@
+<div class="page-container">
+  <mat-card class="card-container">
+
+    <h1>Hotel Guest Registration Form</h1>
+
+    <div class="booking-form-container">
+
+      <form class="booking-form" [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+
+        <!-- user info block -->
+        <span class="sub-label">User Information</span>
+
+        <!-- name -->
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="bookingFormControl['name'].hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+        <!-- /name -->
+
+        <!-- address -->
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <textarea matInput formControlName="address"></textarea>
+        </mat-form-field>
+        <!-- /address -->
+
+        <!-- email -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email">
+          <mat-error *ngIf="bookingFormControl['email'].hasError('email') && 
+          !bookingFormControl['email'].hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="bookingFormControl['email'].hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <!-- /email -->
+
+        <!-- telephone -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Telephone</mat-label>
+          <span matPrefix>+95 &nbsp;</span>
+          <input type="tel" matInput placeholder="9123456780" formControlName="telephone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+          <mat-error *ngIf="bookingFormControl['telephone'].hasError('required')">
+            Telephone is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="!bookingFormControl['telephone'].hasError('required') &&
+          bookingFormControl['telephone'].hasError('invalidTelephone')">
+            Telephone must be 10 digit mobile number format (9xxxxxxxxx) and start with "9".
+          </mat-error>
+        </mat-form-field>
+        <!-- /telephone -->
+        <!-- /user info block -->
+
+        <!-- booking info block -->
+        <span class="sub-label">Booking Information</span>
+
+        <!-- Check-in && Check-out Date -->
+        <mat-form-field appearance="fill">
+          <mat-label>Check-in && Check-out Date</mat-label>
+          <mat-date-range-input [rangePicker]="picker" [min]="minDate" required>
+            <input matStartDate placeholder="Check-in Date" formControlName="checkInDate">
+            <input matEndDate placeholder="Check-out Date" formControlName="checkOutDate">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+          <mat-error *ngIf="bookingFormControl['checkInDate'].hasError('required') ||
+          bookingFormControl['checkOutDate'].hasError('required')">
+            Choose Check-in Date and Check-out Date correctly
+          </mat-error>
+        </mat-form-field>
+        <!-- /Check-in && Check-out Date -->
+
+        <!-- Number of Guest -->
+        <mat-form-field appearance="fill">
+          <mat-label>Number of Guests in Room</mat-label>
+          <input matInput formControlName="numberOfGuest">
+          <mat-error *ngIf="bookingFormControl['numberOfGuest'].hasError('pattern')">
+            Only number value accept
+          </mat-error>
+        </mat-form-field>
+        <!-- /Number of Guest -->
+
+        <!-- room type -->
+        <mat-form-field appearance="fill">
+          <mat-label>Room Type</mat-label>
+          <select matNativeControl formControlName="roomType" required (ngModelChange)="calculateTotalCost()">
+            <option *ngFor="let eachType of roomTypeList" [value]="eachType.value">
+              {{ eachType.label }}
+            </option>
+          </select>
+        </mat-form-field>
+        <!-- /room type -->
+
+        <!-- wifi type -->
+        <label id="wifi-option">Least Pocket Wifi ($5)</label>
+        <mat-radio-group aria-labelledby="wifi-option" formControlName="wifiOption"
+          (ngModelChange)="calculateTotalCost()">
+          <mat-radio-button *ngFor="let eachSetting of wifiSetting" [value]="eachSetting.value">
+            {{eachSetting.label}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <!-- /wifi type -->
+
+        <!-- total cost -->
+        <mat-form-field appearance="fill">
+          <mat-label>Total Cost for 1 Day</mat-label>
+          <span matPrefix>$ &nbsp;</span>
+          <input matInput formControlName="totalCost" readonly="true">
+        </mat-form-field>
+        <!-- /total cost -->
+
+        <!-- special requirement -->
+        <mat-form-field appearance="fill">
+          <mat-label>Note/Special Requirements</mat-label>
+          <textarea matInput formControlName="specialRequirements"></textarea>
+          <mat-hint align="end">{{bookingFormControl['specialRequirements'].value.length}} / {{NUMBER_OF_NOTE}}
+          </mat-hint>
+          <mat-error *ngIf="bookingFormControl['specialRequirements'].hasError('maxlength')">
+            Maximum number of word is {{NUMBER_OF_NOTE}}! Exceeded more than limit
+          </mat-error>
+        </mat-form-field>
+        <!-- /special requirement -->
+        <!-- /booking info block -->
+
+        <div class="button-container">
+          <button mat-raised-button color="primary" [disabled]="!bookingForm.valid" class="submit-btn">
+            Submit
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </mat-card>
+</div>
