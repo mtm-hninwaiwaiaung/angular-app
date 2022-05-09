@@ -48,9 +48,7 @@ export class AssignmentDay14Component implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public dialog: MatDialog) { }
-
-  ngOnInit(): void {
+    public dialog: MatDialog) {
     this.bookingForm = this.formBuilder.group({
       name: ['', Validators.required],
       address: [''],
@@ -64,6 +62,9 @@ export class AssignmentDay14Component implements OnInit {
       totalCost: [0],
       specialRequirements: ['', Validators.maxLength(this.NUMBER_OF_NOTE)]
     }) as BookingFormGroup;
+  }
+
+  ngOnInit(): void {
     this.calculateTotalCost();
   }
 
@@ -80,6 +81,9 @@ export class AssignmentDay14Component implements OnInit {
   }
 
   calculateTotalCost() {
+    if (!this.bookingForm.value.roomType) {
+      return;
+    }
     const totalVal = parseInt(this.bookingForm.value.roomType.toString()) + this.bookingForm.value.wifiOption;
     this.bookingForm.patchValue({
       totalCost: totalVal
