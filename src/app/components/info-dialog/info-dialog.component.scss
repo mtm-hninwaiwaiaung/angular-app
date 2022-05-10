@@ -1,0 +1,24 @@
+.mat-dialog-content {
+  .each-info {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 10px;
+
+    .info-label {
+      width: 150px;
+      display: inline-block;
+      color: #3f51b5;
+      font-size: 15px;
+      font-weight: bold
+    }
+
+    .info-value {
+      width: calc(100% - 180px);
+      display: inline-block;
+    }
+  }
+}
+
+.mat-dialog-actions {
+  justify-content: right;
+}

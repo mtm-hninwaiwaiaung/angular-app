@@ -17,3 +17,23 @@ export interface Student {
     phNumber?: string;
     hobby: string;
 }
+
+export interface Booking {
+    name: string;
+    address?: string;
+    email: string;
+    telephone: string;
+    checkInDate: string;
+    checkOutDate: string;
+    numberOfGuest?: number;
+    roomType: number;
+    wifiOption: number;
+    totalCost: number;
+    specialRequirements?: string;
+}
+
+export interface InputObj {
+    id: number;
+    label: string;
+    value: number;
+}
