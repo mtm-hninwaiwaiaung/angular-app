@@ -16,6 +16,7 @@ import { AssignmentDay12Component } from './pages/assignment-day12/assignment-da
 import { CustomValidatorComponent } from './pages/custom-validator/custom-validator.component';
 import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
+import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
 
 // components
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
@@ -30,7 +31,8 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     CustomValidatorComponent,
     InterfaceExampleComponent,
     AssignmentDay14Component,
-    InfoDialogComponent
+    InfoDialogComponent,
+    MaterialTableExampleComponent
   ],
   imports: [
     BrowserModule,

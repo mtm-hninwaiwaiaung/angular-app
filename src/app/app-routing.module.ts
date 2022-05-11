@@ -9,6 +9,7 @@ import { AssignmentDay12Component } from './pages/assignment-day12/assignment-da
 import { CustomValidatorComponent } from './pages/custom-validator/custom-validator.component';
 import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
+import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
 
 const routes: Routes = [
   { path: '', component: TemplateFormExampleComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'day12', component: AssignmentDay12Component },
   { path: 'custom/validator', component: CustomValidatorComponent },
   { path: 'interface', component: InterfaceExampleComponent },
-  { path: 'day14', component: AssignmentDay14Component }
+  { path: 'day14', component: AssignmentDay14Component },
+  { path: 'table', component: MaterialTableExampleComponent }
 ];
 
 @NgModule({
