@@ -10,10 +10,10 @@ import { CustomValidatorComponent } from './pages/custom-validator/custom-valida
 import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
 import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
-import { Day17RouteComponent } from './pages/day17-route/day17-route.component';
+import { Day21RouteComponent } from './pages/day21-route/day21-route.component';
 
 const routes: Routes = [
-  { path: '', component: Day17RouteComponent },
+  { path: '', component: Day21RouteComponent },
   { path: 'template', component: TemplateFormExampleComponent },
   { path: 'reactive', component: ReactiveFormExampleComponent },
   { path: 'member/register', component: AssignmentDay11Component },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'interface', component: InterfaceExampleComponent },
   { path: 'day14', component: AssignmentDay14Component },
   { path: 'table', component: MaterialTableExampleComponent },
-  { path: 'day17-route', component: Day17RouteComponent }
+  { path: 'day21-route', component: Day21RouteComponent }
 ];
 
 @NgModule({

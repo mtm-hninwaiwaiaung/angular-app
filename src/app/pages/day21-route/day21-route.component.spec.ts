@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Day17RouteComponent } from './day17-route.component';
+import { Day21RouteComponent } from './day21-route.component';
 
-describe('Day17RouteComponent', () => {
-  let component: Day17RouteComponent;
-  let fixture: ComponentFixture<Day17RouteComponent>;
+describe('Day21RouteComponent', () => {
+  let component: Day21RouteComponent;
+  let fixture: ComponentFixture<Day21RouteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Day17RouteComponent ]
+      declarations: [ Day21RouteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Day17RouteComponent);
+    fixture = TestBed.createComponent(Day21RouteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
