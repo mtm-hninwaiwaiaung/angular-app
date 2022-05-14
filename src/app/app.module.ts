@@ -17,6 +17,7 @@ import { CustomValidatorComponent } from './pages/custom-validator/custom-valida
 import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
 import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
+import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
 
 // components
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
@@ -32,7 +33,8 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     InterfaceExampleComponent,
     AssignmentDay14Component,
     InfoDialogComponent,
-    MaterialTableExampleComponent
+    MaterialTableExampleComponent,
+    Day20RouteComponent
   ],
   imports: [
     BrowserModule,
