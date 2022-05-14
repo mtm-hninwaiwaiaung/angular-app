@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatTableModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ]
 })
 export class AngularMaterailModule { }
