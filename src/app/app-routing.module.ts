@@ -10,9 +10,11 @@ import { CustomValidatorComponent } from './pages/custom-validator/custom-valida
 import { InterfaceExampleComponent } from './pages/interface-example/interface-example.component';
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
 import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
+import { AssignmentDay20Component } from './pages/assignment-day20/assignment-day20.component';
+import { NotFondPageComponent } from './pages/not-fond-page/not-fond-page.component';
 
 const routes: Routes = [
-  { path: '', component: TemplateFormExampleComponent },
+  { path: '', redirectTo: 'day12', pathMatch: 'full' },
   { path: 'template', component: TemplateFormExampleComponent },
   { path: 'reactive', component: ReactiveFormExampleComponent },
   { path: 'member/register', component: AssignmentDay11Component },
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'custom/validator', component: CustomValidatorComponent },
   { path: 'interface', component: InterfaceExampleComponent },
   { path: 'day14', component: AssignmentDay14Component },
-  { path: 'table', component: MaterialTableExampleComponent }
+  { path: 'table', component: MaterialTableExampleComponent },
+  { path: 'day20', component: AssignmentDay20Component },
+  { path: '**', component: NotFondPageComponent }
 ];
 
 @NgModule({

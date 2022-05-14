@@ -1,0 +1,15 @@
+.not-fond-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    width: 100%;
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #b04a4a;
+  }
+}
