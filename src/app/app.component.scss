@@ -1,3 +1,9 @@
-.header {
-  cursor: pointer;
+.nav-container {
+  .mat-drawer.mat-drawer-side {
+    width: 150px;
+  }
+}
+
+.content-container {
+  height: 100vh;
 }
