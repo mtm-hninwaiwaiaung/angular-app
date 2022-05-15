@@ -14,12 +14,14 @@ import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
 import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
 import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 import { GuardDeactivateComponent } from './pages/guard-deactivate/guard-deactivate.component';
+import { AssignmentDay22Component } from './pages/assignment-day22/assignment-day22.component';
 
 // guards
 import { AuthGuard } from './guards/auth.guard';
 import { AuthChildGuard } from './guards/auth-child.guard';
 import { AuthDeactivateGuard } from './guards/auth-deactivate.guard';
 import { AuthCanLoadGuard } from './guards/auth-can-load.guard';
+import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
   { path: 'template', component: TemplateFormExampleComponent },
@@ -45,6 +47,9 @@ const routes: Routes = [
     path: 'guard-lazy',
     loadChildren: () => import('./pages/guard-lazy/guard-lazy.module').then(m => m.GuardLazyModule),
     canLoad: [AuthCanLoadGuard]
+  },
+  {
+    path: 'day22/:id', component: AssignmentDay22Component, canActivate: [UserGuard]
   }
 ];
 
