@@ -18,6 +18,8 @@ import { InterfaceExampleComponent } from './pages/interface-example/interface-e
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
 import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
 import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
+import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
+import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 
 // components
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
@@ -34,7 +36,9 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     AssignmentDay14Component,
     InfoDialogComponent,
     MaterialTableExampleComponent,
-    Day20RouteComponent
+    Day20RouteComponent,
+    GuardExampleComponent,
+    GuardChildExampleComponent
   ],
   imports: [
     BrowserModule,

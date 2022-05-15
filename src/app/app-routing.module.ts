@@ -11,6 +11,15 @@ import { InterfaceExampleComponent } from './pages/interface-example/interface-e
 import { AssignmentDay14Component } from './pages/assignment-day14/assignment-day14.component';
 import { MaterialTableExampleComponent } from './pages/material-table-example/material-table-example.component';
 import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
+import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
+import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
+import { GuardDeactivateComponent } from './pages/guard-deactivate/guard-deactivate.component';
+
+// guards
+import { AuthGuard } from './guards/auth.guard';
+import { AuthChildGuard } from './guards/auth-child.guard';
+import { AuthDeactivateGuard } from './guards/auth-deactivate.guard';
+import { AuthCanLoadGuard } from './guards/auth-can-load.guard';
 
 const routes: Routes = [
   { path: 'template', component: TemplateFormExampleComponent },
@@ -21,7 +30,22 @@ const routes: Routes = [
   { path: 'interface', component: InterfaceExampleComponent },
   { path: 'day14', component: AssignmentDay14Component },
   { path: 'table', component: MaterialTableExampleComponent },
-  { path: 'day20-route', component: Day20RouteComponent }
+  { path: 'day20-route', component: Day20RouteComponent },
+  {
+    path: 'guard',
+    component: GuardExampleComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthChildGuard],
+    children: [
+      { path: 'child', component: GuardChildExampleComponent }
+    ]
+  },
+  { path: 'guard/deactivate', component: GuardDeactivateComponent, canDeactivate: [AuthDeactivateGuard] },
+  {
+    path: 'guard-lazy',
+    loadChildren: () => import('./pages/guard-lazy/guard-lazy.module').then(m => m.GuardLazyModule),
+    canLoad: [AuthCanLoadGuard]
+  }
 ];
 
 @NgModule({
