@@ -25,6 +25,8 @@ import { GuardExampleComponent } from './pages/guard-example/guard-example.compo
 import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component';
 import { Day24HttpComponent } from './pages/day24-http/day24-http.component';
+import { AssignmentDay24Component } from './pages/assignment-day24/assignment-day24.component';
+import { PostControlComponent } from './pages/post-control/post-control.component';
 
 // components
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
@@ -47,7 +49,9 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     GuardExampleComponent,
     GuardChildExampleComponent,
     Day23ResolverComponent,
-    Day24HttpComponent
+    Day24HttpComponent,
+    AssignmentDay24Component,
+    PostControlComponent
   ],
   imports: [
     BrowserModule,

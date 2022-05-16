@@ -44,3 +44,9 @@ export interface PeriodicElement {
     weight: number;
     symbol: string;
 }
+
+export interface Post {
+    id: number;
+    title: string;
+    author: string;
+}

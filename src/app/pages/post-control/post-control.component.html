@@ -1,0 +1,32 @@
+<div class="post-container">
+
+  <h2> Post Action </h2>
+
+  <div class="post-form-container">
+    <form class="post-form" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+        <mat-error *ngIf="postControl['title'].hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Author</mat-label>
+        <input matInput formControlName="author">
+        <mat-error *ngIf="postControl['author'].hasError('required')">
+          Author is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button color="primary" [disabled]="!postForm.valid" class="submit-btn">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

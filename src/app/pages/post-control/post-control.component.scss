@@ -1,0 +1,27 @@
+.post-container {
+  width: 30%;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+  }
+
+  .post-form-container {
+    .post-form {
+      width: 100%;
+      display: inline-flex;
+      flex-direction: column;
+
+      .button-container {
+        text-align: center;
+
+        .submit-btn {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
