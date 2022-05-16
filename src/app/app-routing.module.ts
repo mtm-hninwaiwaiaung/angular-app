@@ -16,7 +16,9 @@ import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
 import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
 import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 import { GuardDeactivateComponent } from './pages/guard-deactivate/guard-deactivate.component';
-import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component'
+import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component';
+import { Day24HttpComponent } from './pages/day24-http/day24-http.component';
+
 // guards
 import { AuthGuard } from './guards/auth.guard';
 import { AuthChildGuard } from './guards/auth-child.guard';
@@ -58,6 +60,7 @@ const routes: Routes = [
     component: Day23ResolverComponent,
     resolve: { user: UserResolver }
   },
+  { path: 'day24-http', component: Day24HttpComponent },
   { path: '**', component: NotFondPageComponent }
 ];
 

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms'; // for Template-driven Form
 import { ReactiveFormsModule } from '@angular/forms'; // for Reactive Form
 import { AngularMaterailModule } from './angular-materail.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // pages.
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
 import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
 import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component';
+import { Day24HttpComponent } from './pages/day24-http/day24-http.component';
 
 // components
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
@@ -44,7 +46,8 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     NotFondPageComponent,
     GuardExampleComponent,
     GuardChildExampleComponent,
-    Day23ResolverComponent
+    Day23ResolverComponent,
+    Day24HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularMaterailModule
+    AngularMaterailModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
