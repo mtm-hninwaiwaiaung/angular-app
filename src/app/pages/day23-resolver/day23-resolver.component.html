@@ -1,0 +1,13 @@
+<div class="resolver-container">
+  <div class="resolved-data" *ngIf="data">
+    <mat-list>
+      <div mat-subheader>Your Registered Info</div>
+      <mat-list-item>
+        <mat-icon mat-list-icon>note</mat-icon>
+        <div mat-line>{{data?.name}}</div>
+        <div mat-line> {{data?.email}} </div>
+        <div mat-line> {{data?.hobby}} </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
