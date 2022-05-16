@@ -1,13 +1,13 @@
-<mat-toolbar>
-  <span routerLink="" class="header">My App</span>
-  <button mat-button routerLink="member/register">
-    Day11
-  </button>
+<mat-toolbar *ngIf="showNavBar">
+  <span routerLink="login" class="header">Login</span>
   <button mat-button routerLink="day12">
     Day12
   </button>
-  <button mat-button routerLink="table">
-    Table
+  <button mat-button routerLink="day14">
+    Day14
+  </button>
+  <button mat-button routerLink="day20">
+    Day20
   </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

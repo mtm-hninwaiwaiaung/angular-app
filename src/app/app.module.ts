@@ -23,6 +23,7 @@ import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
 import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
 import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component';
+import { AssignmentDay23Component } from './pages/assignment-day23/assignment-day23.component';
 
 // components
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
@@ -44,7 +45,8 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     NotFondPageComponent,
     GuardExampleComponent,
     GuardChildExampleComponent,
-    Day23ResolverComponent
+    Day23ResolverComponent,
+    AssignmentDay23Component
   ],
   imports: [
     BrowserModule,

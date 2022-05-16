@@ -6,6 +6,7 @@ import { delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
+  public isAuth = false;
   private userList = [
     { id: 1, name: 'Kyaw Kyaw', email: 'kyawkyaw@gmail.com', age: 24, hobby: "swimming, reading" },
     { id: 2, name: 'Aye Aye', email: 'ayeaye@gmail.com', age: 28, hobby: "cooking, eating" },
@@ -20,5 +21,13 @@ export class UserService {
       .pipe(
         delay(1000)
       );
+  }
+
+  setAuth(isLoggined: boolean) {
+    this.isAuth = isLoggined;
+  }
+
+  getAuth() {
+    return this.isAuth;
   }
 }

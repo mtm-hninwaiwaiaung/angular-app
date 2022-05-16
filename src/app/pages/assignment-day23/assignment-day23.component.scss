@@ -1,0 +1,27 @@
+.login-validator-container {
+  width: 30%;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+  }
+
+  .form-container {
+    .login-form {
+      width: 100%;
+      display: inline-flex;
+      flex-direction: column;
+
+      .button-container {
+        text-align: center;
+
+        .login-btn {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

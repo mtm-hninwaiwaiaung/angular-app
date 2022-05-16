@@ -16,28 +16,31 @@ import { Day20RouteComponent } from './pages/day20-route/day20-route.component';
 import { GuardExampleComponent } from './pages/guard-example/guard-example.component';
 import { GuardChildExampleComponent } from './pages/guard-child-example/guard-child-example.component';
 import { GuardDeactivateComponent } from './pages/guard-deactivate/guard-deactivate.component';
-import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component'
+import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component';
+import { AssignmentDay23Component } from './pages/assignment-day23/assignment-day23.component';
+
 // guards
 import { AuthGuard } from './guards/auth.guard';
 import { AuthChildGuard } from './guards/auth-child.guard';
 import { AuthDeactivateGuard } from './guards/auth-deactivate.guard';
 import { AuthCanLoadGuard } from './guards/auth-can-load.guard';
+import { UserGuard } from './guards/user.guard';
 
 // resolvers
 import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'day12', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'template', component: TemplateFormExampleComponent },
   { path: 'reactive', component: ReactiveFormExampleComponent },
   { path: 'member/register', component: AssignmentDay11Component },
-  { path: 'day12', component: AssignmentDay12Component },
+  { path: 'day12', component: AssignmentDay12Component, canActivate: [UserGuard] },
   { path: 'custom/validator', component: CustomValidatorComponent },
   { path: 'interface', component: InterfaceExampleComponent },
-  { path: 'day14', component: AssignmentDay14Component },
+  { path: 'day14', component: AssignmentDay14Component, canActivate: [UserGuard] },
   { path: 'table', component: MaterialTableExampleComponent },
   { path: 'day20-route', component: Day20RouteComponent },
-  { path: 'day20', component: AssignmentDay20Component },
+  { path: 'day20', component: AssignmentDay20Component, canActivate: [UserGuard] },
   {
     path: 'guard',
     component: GuardExampleComponent,
@@ -57,6 +60,10 @@ const routes: Routes = [
     path: 'day23-resolver/:id',
     component: Day23ResolverComponent,
     resolve: { user: UserResolver }
+  },
+  {
+    path: 'login',
+    component: AssignmentDay23Component
   },
   { path: '**', component: NotFondPageComponent }
 ];

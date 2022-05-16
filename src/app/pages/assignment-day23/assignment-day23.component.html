@@ -1,0 +1,38 @@
+<div class="login-validator-container">
+
+  <h2>login </h2>
+
+  <div class="form-container">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="regForm['email'].hasError('email') && !regForm['email'].hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="regForm['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password">
+        <mat-error *ngIf="regForm['password'].hasError('required')">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="regForm['password'].hasError('minlength')">
+          Password must be at least 4 characters
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid" class="login-btn">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
