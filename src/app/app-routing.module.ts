@@ -29,6 +29,7 @@ import { AuthCanLoadGuard } from './guards/auth-can-load.guard';
 
 // resolvers
 import { UserResolver } from './resolvers/user.resolver';
+import { PostResolver } from './resolvers/post.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: 'day12', pathMatch: 'full' },
@@ -65,6 +66,7 @@ const routes: Routes = [
   { path: 'day24-http', component: Day24HttpComponent },
   { path: 'day24', component: AssignmentDay24Component },
   { path: 'post', component: PostControlComponent },
+  { path: 'post/:id', component: PostControlComponent, resolve: { post: PostResolver } },
   { path: '**', component: NotFondPageComponent }
 ];
 

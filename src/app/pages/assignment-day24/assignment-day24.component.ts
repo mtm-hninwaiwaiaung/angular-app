@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ApiService } from '../../services/api.service';
-
-import { Post } from '../../interfaces/interface';
 
 @Component({
   selector: 'app-assignment-day24',
@@ -14,7 +13,8 @@ export class AssignmentDay24Component implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'author', 'action'];
   postList = [];
   constructor(
-    private apiSvc: ApiService
+    private apiSvc: ApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +58,7 @@ export class AssignmentDay24Component implements OnInit {
   }
 
   editPostData(id: number) {
-    console.log('==== post data ====')
-    console.log(id)
+    const editUrl = '/post/' + id.toString();
+    this.router.navigateByUrl(editUrl);
   }
 }

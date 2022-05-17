@@ -10,10 +10,16 @@ import { Post } from '../interfaces/interface';
 export class ApiService {
 
   apiUrl = 'http://localhost:3000';
+
   constructor(private http: HttpClient) { }
 
   getAllPost(): Observable<any> {
     const url = this.apiUrl + '/posts';
+    return this.http.get(url);
+  }
+
+  getEachPostDetail(paramId: number): Observable<any> {
+    const url = this.apiUrl + '/posts/' + paramId;
     return this.http.get(url);
   }
 
@@ -24,7 +30,22 @@ export class ApiService {
 
   editPost(paramData: Post): Observable<any> {
     const url = this.apiUrl + '/posts/' + paramData.id;
-    return this.http.put(url, paramData);
+    const option = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    return this.http.put(url, paramData, option);
+  }
+
+  createPost(paramData: Post): Observable<any> {
+    const url = this.apiUrl + '/posts';
+    const option = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    return this.http.post(url, paramData, option);
   }
 
 }
