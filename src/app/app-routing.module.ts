@@ -19,6 +19,7 @@ import { GuardDeactivateComponent } from './pages/guard-deactivate/guard-deactiv
 import { Day23ResolverComponent } from './pages/day23-resolver/day23-resolver.component';
 import { Day24HttpComponent } from './pages/day24-http/day24-http.component';
 import { Day25RxjsComponent } from './pages/day25-rxjs/day25-rxjs.component';
+import { AssignmentDay25Component } from './pages/assignment-day25/assignment-day25.component';
 
 // guards
 import { AuthGuard } from './guards/auth.guard';
@@ -63,6 +64,7 @@ const routes: Routes = [
   },
   { path: 'day24-http', component: Day24HttpComponent },
   { path: 'day25-rxjs', component: Day25RxjsComponent },
+  { path: 'day25', component: AssignmentDay25Component },
   { path: '**', component: NotFondPageComponent }
 ];
 
