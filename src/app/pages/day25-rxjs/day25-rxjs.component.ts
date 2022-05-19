@@ -11,7 +11,8 @@ import {
   Subject,
   takeUntil,
   distinctUntilChanged,
-  from
+  from,
+  debounceTime
 } from 'rxjs';
 
 @Component({
@@ -26,7 +27,7 @@ export class Day25RxjsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.usageOFOperator();
+    this.usageofDebounceTime();
   }
 
   usageOfRxJSMap() {
@@ -102,6 +103,13 @@ export class Day25RxjsComponent implements OnInit {
       ).subscribe((value) => {
         console.log('Value: ' + value);
       });
+  }
+
+  usageofDebounceTime() {
+    const clicks = fromEvent(document, 'click');
+    // wait 3second.
+    const result = clicks.pipe(debounceTime(3000));
+    result.subscribe(x => console.log(x));
   }
 
   usageOFOperator() {
