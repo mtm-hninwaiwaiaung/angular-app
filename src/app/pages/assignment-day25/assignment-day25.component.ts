@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ajax } from 'rxjs/ajax';
+import { FormControl } from '@angular/forms';
+import {
+  debounceTime,
+  distinctUntilChanged,
+} from 'rxjs/operators';
+
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-assignment-day25',
@@ -7,26 +13,46 @@ import { ajax } from 'rxjs/ajax';
   styleUrls: ['./assignment-day25.component.scss']
 })
 export class AssignmentDay25Component implements OnInit {
+  searchText = new FormControl('');
   displayedColumns: string[] = ['id', 'title', 'author'];
   postList: any = [];
+  orgList: any = [];
 
-  constructor() { }
+  constructor(
+    private apiSvc: ApiService
+  ) { }
 
   ngOnInit(): void {
     this.getPostList();
+    this.handleSearch();
   }
 
   getPostList() {
-    const postListUrl = 'http://localhost:3000/posts';
-    // getJSON similar with http get request. 
-    const post$ = ajax.getJSON(postListUrl);
-    post$.pipe(
-    ).subscribe({
-      next: res => {
-        this.postList = res;
-      },
-      error: err => console.log(err)
-    });
+    this.apiSvc.getAllPostUsingRxjs()
+      .subscribe((data) => {
+        this.orgList = data;
+        this.postList = data;
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  handleSearch() {
+    this.searchText.valueChanges
+      .pipe(
+        // wait 1000 ms (1s).
+        debounceTime(1000),
+        distinctUntilChanged()
+      ).subscribe((currentText) => {
+        if (currentText) {
+          this.postList = this.orgList
+            .filter((eachPost: any) => {
+              return eachPost.title.toLowerCase().indexOf(currentText.toLowerCase()) >= 0;
+            });
+        } else {
+          this.postList = this.orgList;
+        }
+      });
   }
 
 }

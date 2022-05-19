@@ -1,7 +1,13 @@
 <div class="table-container">
-  <h1>RXJS Assignment</h1>
+  <h1>RxJS Assignment</h1>
 
-  <table mat-table [dataSource]="postList" class="post-table" *ngIf="postList.length>0">
+  <div class="search-form-container">
+    <mat-form-field class="search-form-field">
+      <mat-label>Search with Title</mat-label>
+      <input matInput placeholder="title" [formControl]="searchText">
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="postList" class="post-table" *ngIf="postList.length > 0">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> #ID </th>
@@ -24,4 +30,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
   </table>
+
+  <div class="empty-data-container" *ngIf="postList.length <= 0">
+    <span class="content">There is no data to show...</span>
+  </div>
 </div>

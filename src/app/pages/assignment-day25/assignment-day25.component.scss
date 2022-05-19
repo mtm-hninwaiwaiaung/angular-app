@@ -5,6 +5,16 @@
     text-align: center;
   }
 
+  .search-form-container {
+    width: calc(100% - 40px);
+    display: inline-block;
+    margin: 0 auto;
+
+    .search-form-field {
+      float: right;
+    }
+  }
+
   .post-table {
     width: calc(100% - 40px);
     margin: 0 auto;
@@ -12,9 +22,18 @@
     .fixed-width {
       width: 250px;
     }
+  }
 
-    .edit-btn {
-      margin-right: 10px;
+  .empty-data-container {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 30px 0px;
+
+    .content {
+      text-align: center;
+      font-size: 20px;
+      color: #b0b0b0;
     }
   }
 }
