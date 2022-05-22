@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { reduce } from 'rxjs';
 
 import { Post } from '../../interfaces/interface';
 
@@ -47,8 +46,6 @@ export class PostControlComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('data', this.postForm.value);
-    console.log('edit', this.isEditPost)
     if (this.isEditPost) {
       this.apiSvc.editPost(this.postForm.value).subscribe({
         next: retData => {

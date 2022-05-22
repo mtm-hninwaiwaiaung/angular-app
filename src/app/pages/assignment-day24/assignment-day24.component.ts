@@ -37,8 +37,6 @@ export class AssignmentDay24Component implements OnInit {
   getPostDataV2() {
     this.apiSvc.getAllPost()
       .subscribe((data) => {
-        console.log('=== data ===')
-        console.log(data)
       }, error => {
         console.log('=== handle http ====')
         console.log(error)
