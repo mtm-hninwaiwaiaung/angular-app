@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { PeriodicElement } from '../../interfaces/interface';
 
@@ -9,11 +9,17 @@ import { PeriodicElement } from '../../interfaces/interface';
 })
 export class Day26ChildComponent implements OnInit {
   @Input() elementListFromParent!: PeriodicElement[];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  @Output() outputFromChild: EventEmitter<PeriodicElement> = new EventEmitter();
+
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendDataToParent(parmaData: PeriodicElement) {
+    this.outputFromChild.emit(parmaData);
   }
 
 }

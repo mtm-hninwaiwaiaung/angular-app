@@ -1,3 +1,22 @@
 <div class="parent-container">
-  <app-day26-child [elementListFromParent]="elementArrList"></app-day26-child>
+  <app-day26-child [elementListFromParent]="elementArrList" (outputFromChild)="receiveChildData($event)">
+  </app-day26-child>
+
+  <div class="content-container">
+    <h1>Data From Child</h1>
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <b>Element Name:&nbsp;</b> {{selectedElement.name}}
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <b>Element Positon:&nbsp;</b> {{selectedElement.position}}
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <b>Element Weight:&nbsp;</b> {{selectedElement.weight}}
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <b>Element Symbol:&nbsp;</b> {{selectedElement.symbol}}
+      </mat-list-item>
+    </mat-list>
+  </div>
 </div>
